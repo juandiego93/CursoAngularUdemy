@@ -9,9 +9,16 @@ import { HeroesService } from 'src/app/services/heroes.services';
 
 export class HeroesComponent implements OnInit {
 
+  heroes: {}[];
+
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit(): void {
+    this.heroes = this.heroesService.getAllHeroes();
+    console.log(this.heroes);
+    
   }
+
+
 
 }
