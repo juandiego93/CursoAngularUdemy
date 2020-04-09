@@ -71,9 +71,12 @@ export class HeroesService {
     searchHeroes(value: string) {
         const heroesArr: Heroe[] = [];
         value = value.toLowerCase();
-        for (const heroe of this.heroes) {
+        // for (const heroe of this.heroes) {
+        for (let i = 0; i < this.heroes.length; i++) {
+            const heroe = this.heroes[i];
             const nombre = heroe['nombre'].toLowerCase();
             if (nombre.indexOf(value) >= 0) {
+                heroe.idx = i;
                 heroesArr.push(heroe);
             }
         }
@@ -83,7 +86,7 @@ export class HeroesService {
 }
 
 export interface Heroe {
-
+    idx?: number;
     nombre: string;
     bio: string;
     img: string;
