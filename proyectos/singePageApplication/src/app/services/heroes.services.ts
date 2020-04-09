@@ -58,7 +58,6 @@ export class HeroesService {
     ];
 
     constructor() {
-        console.log('Servicio de Heroes listo ! ! !');
     }
 
     getAllHeroes() {
@@ -78,6 +77,7 @@ export class HeroesService {
                 heroesArr.push(heroe);
             }
         }
+        return heroesArr;
     }
 
 }
