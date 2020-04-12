@@ -12,6 +12,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // RUTAS
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
+
+//Servicios
+// import { SpotifyService } from './services/spotify.service'; // No se inyecta porque en el servicio hay Injectable: providedIn: 'root'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,9 @@ import { ROUTES } from './app.routes';
     BrowserModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  providers: [],
+  providers: [
+    // SpotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
