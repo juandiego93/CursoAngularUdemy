@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // RUTAS
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 //Servicios
 // import { SpotifyService } from './services/spotify.service'; // No se inyecta porque en el servicio hay Injectable: providedIn: 'root'
@@ -22,7 +23,8 @@ import { ROUTES } from './app.routes';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     HttpClientModule,
