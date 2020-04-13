@@ -1,16 +1,6 @@
-<!-- <div class="container">
-	<ul>
-		<li>PAIS - Poblacion</li>
-		<li *ngFor="let country of countries">
-			{{country.name}} - {{country.population | number}}
-		</li>
-	</ul>
-</div> -->
-
-
-<div class="card-columns">
+<!-- <div class="card-columns">
 	<div class="card" *ngFor="let newSong of newReleases">
-		<img class="card-img-top" [src]="newSong.images[0].url" alt="Card image cap">
+		<img class="card-img-top" [src]="newSong.images | noimage" alt="Card image cap">
 		<div class="card-body">
 			<h5 class="card-title">
 				{{newSong.name}}
@@ -20,4 +10,6 @@
 			</p>
 		</div>
 	</div>
-</div>
+</div> -->
+
+<app-tarjetas [items]="newReleases"></app-tarjetas>
