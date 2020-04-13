@@ -18,12 +18,10 @@ export class SearchComponent implements OnInit {
 
   searchArtist(termSearch: string) {
     this.loading = true;
-    setTimeout(() => {
-      this.spotifyService.getArtist(termSearch).subscribe((data: any) => {
-        this.artists = data;
-        this.loading = false;
-      });
-    }, 3000);
+    this.spotifyService.getArtists(termSearch).subscribe((data: any) => {
+      this.artists = data;
+      this.loading = false;
+    });
   }
 
   getArtist(termArtist: string) {

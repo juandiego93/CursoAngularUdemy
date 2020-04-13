@@ -20,10 +20,8 @@ export class HomeComponent implements OnInit {
       this.countries = countries;
     });
     this.spotify.getNewReleases().subscribe((data: any) => {
-      setTimeout(() => {
-        this.newReleases = data;
-        this.loading = false;
-      }, 1000);
+      this.newReleases = data;
+      this.loading = false;
     });
   }
 
