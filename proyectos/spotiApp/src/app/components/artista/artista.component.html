@@ -8,7 +8,7 @@
 			{{artist.name}}
 		</h3>
 		<p>
-			<a [href]="artist.esternal_urls.spotify" target="_blank">
+			<a [href]="artist.external_urls.spotify" target="_blank">
 				Ir a la página del artista
 			</a>
 		</p>
@@ -17,5 +17,33 @@
 		<button routerLink="/search" class="btn btn-outline-danger">
 			Regresar
 		</button>
+	</div>
+</div>
+<div class="row mt-4">
+	<div class="col">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Foto</th>
+					<th>Album</th>
+					<th>Canción</th>
+					<th>Vista Previa</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let track of topTracks">
+					<td>
+						<img [src]="track.album.images | noimage" alt="{{track.name}}" class="img-thumb">
+					</td>
+					<td>{{track.album.name}}</td>
+					<td>{{track.name}}</td>
+					<td>
+						<!-- <audio [src]="track.preview_url" controls></audio> -->
+						<!-- <iframe src="https://open.spotify.com/embed/album/{{track.uri}}" width="300"
+							height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>
