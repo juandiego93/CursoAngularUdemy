@@ -8,7 +8,9 @@ export class DeseosService {
 
   listas: Lista[] = [];
 
-  constructor() { 
-    
+  constructor() {
+    const lista1 = new Lista('Recolestar Piedras');
+    const lista2 = new Lista('Héroes a desaparecer');
+    this.listas.push(lista1, lista2);
   }
 }

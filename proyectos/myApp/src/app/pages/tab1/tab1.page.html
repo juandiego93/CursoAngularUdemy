@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <h3>
-    Hola Mundo !
-  </h3>
+  <ion-list>
+    <ion-item *ngFor="let lista  of deseoService.listas" detail>
+      <ion-label>
+        {{lista.titulo}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
