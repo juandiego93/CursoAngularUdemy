@@ -9,7 +9,16 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../pages/tab1/tab1.module').then(m => m.Tab1PageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/tab1/tab1.module').then(m => m.Tab1PageModule)
+          },
+          {
+            path: 'agregar',
+            loadChildren: () => import('../pages/agregar/agregar.module').then(m => m.AgregarPageModule)
+          },
+        ]
       },
       {
         path: 'tab2',
@@ -33,4 +42,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }
