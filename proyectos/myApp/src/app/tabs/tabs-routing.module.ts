@@ -15,7 +15,7 @@ const routes: Routes = [
             loadChildren: () => import('../pages/tab1/tab1.module').then(m => m.Tab1PageModule)
           },
           {
-            path: 'agregar',
+            path: 'agregar/:listaId',
             loadChildren: () => import('../pages/agregar/agregar.module').then(m => m.AgregarPageModule)
           },
         ]
