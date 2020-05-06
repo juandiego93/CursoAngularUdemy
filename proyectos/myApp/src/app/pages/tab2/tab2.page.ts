@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DeseosService } from 'src/app/services/deseos.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { DeseosService } from 'src/app/services/deseos.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
- 
-  constructor(private deseoService: DeseosService) {}
+
+  constructor(private deseoService: DeseosService) { }
 
 }
