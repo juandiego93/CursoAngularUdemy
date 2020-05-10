@@ -1,4 +1,4 @@
-<ion-header no-border>
+<ion-header no-border color="dark">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button color="tertiary" defaultHref="/">
@@ -7,15 +7,15 @@
     <ion-title>{{lista.titulo}}</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-list>
+<ion-content color="dark">
+  <ion-list color="dark">
     <ion-item>
       <ion-label position="floating">Nuevo Item</ion-label>
       <ion-input type="text" [(ngModel)]="nombreItem" (keyup.enter)="agregarItem()"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-list>
-    <ion-list-header *ngIf="lista.items.length > 0">
+  <ion-list color="dark">
+    <ion-list-header *ngIf="lista.items.length > 0" >
       <ion-label>
         Tareas por hacer
       </ion-label>
