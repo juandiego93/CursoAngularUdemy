@@ -12,7 +12,7 @@ import { AlertController, IonList } from '@ionic/angular';
 export class ListasComponent implements OnInit {
 
   @Input() terminada = true;
-  @ViewChild('lista', IonList) lista: IonList;
+  @ViewChild('lista', { read: IonList, static: true }) lista: IonList;
 
   constructor(public deseoService: DeseosService, private router: Router, private alertCtrl: AlertController) { }
 
