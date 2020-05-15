@@ -1,0 +1,36 @@
+
+
+<button class="btn btn-secundary" (click)="ejecutar()" type="button" name="button" [disabled]="loading">
+	<i [ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin':loading}" class="fa fa-save"></i>
+	<span *ngIf="!loading">
+		Guardar Cambios
+	</span>
+	<span *ngIf="loading">
+		Espere por favor
+	</span>
+</button>
+
+<hr>
+<hr>
+
+
+<div [ngClass]="alerta" class="alert" role="alert">
+	JUAN DIEGO OSORIO CASTRILLON
+</div>
+<button class="m-2 btn btn-info" (click)="alerta = 'alert-info'">
+	+
+</button>
+
+<button class="m-2 btn btn-danger" (click)="alerta = 'alert-danger'">
+	-
+</button>
+<hr>
+
+<h3 [ngClass]="{'text-danger':propiedades.danger, 'text-info': !propiedades.danger}">
+	Hola
+</h3>
+
+<button (click)="propiedades.danger = !propiedades.danger" class="btn btn-primary"
+	[ngClass]="{'btn-danger':propiedades.danger, 'btn-info':!propiedades.danger}">
+	Cambiar
+</button>
