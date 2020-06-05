@@ -84,7 +84,7 @@ export class AuthService {
     });
   }
 
-  private handleAuthCallback() {
+  handleAuthCallback() {
     // Call when app reloads after user logs in with Auth0
     const params = window.location.search;
     if (params.includes('code=') && params.includes('state=')) {

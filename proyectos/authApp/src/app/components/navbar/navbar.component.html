@@ -8,7 +8,7 @@
 			<li class="nav-item">
 				<a class="nav-link" [routerLink]="['/precios']" routerLinkActive="router-link-active">Precios</a>
 			</li>
-			<li class="nav-item">
+			<li *ngIf="auth.loggedIn" class="nav-item">
 				<a class="nav-link" [routerLink]="['/protegida']" routerLinkActive="router-link-active">Protegida</a>
 			</li>
 		</ul>
