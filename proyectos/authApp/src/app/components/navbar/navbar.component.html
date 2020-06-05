@@ -3,17 +3,22 @@
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+				<a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" [routerLink]="['/precios']" routerLinkActive="router-link-active" >Precios</a>
+				<a class="nav-link" [routerLink]="['/precios']" routerLinkActive="router-link-active">Precios</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" [routerLink]="['/protegida']" routerLinkActive="router-link-active" >Protegida</a>
+				<a class="nav-link" [routerLink]="['/protegida']" routerLinkActive="router-link-active">Protegida</a>
 			</li>
 		</ul>
 		<span class="navbar-text">
-			Navbar text with an inline element
+			<button class="tbn btn-outline-primary" *ngIf="!auth.loggedIn">
+				Login
+			</button>
+			<button class="tbn btn-outline-primary" *ngIf="auth.loggedIn">
+				Logout
+			</button>
 		</span>
 	</div>
 </nav>
