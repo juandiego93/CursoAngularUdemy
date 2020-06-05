@@ -1,15 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">Atuh0 Application</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" [routerLink]="['/home']">Atuh0 Application</a>
 	<div class="collapse navbar-collapse" id="navbarText">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home</a>
+			<li class="nav-item">
+				<a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">PRecios</a>
+				<a class="nav-link" [routerLink]="['/precios']" routerLinkActive="router-link-active" >Precios</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Protegida</a>
+				<a class="nav-link" [routerLink]="['/protegida']" routerLinkActive="router-link-active" >Protegida</a>
 			</li>
 		</ul>
 		<span class="navbar-text">
