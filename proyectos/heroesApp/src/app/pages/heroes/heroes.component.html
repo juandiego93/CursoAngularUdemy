@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
     <div class="col text-right">
-        <button class="btn btn-primary" [routerLink]="['/heroe/nuevo']" routerLinkActive="router-link-active" >
+        <button class="btn btn-primary" [routerLink]="['/heroe/nuevo']" routerLinkActive="router-link-active">
             <i class="mr-1 fa fa-plus">
             </i>
             Agregar
@@ -10,30 +10,35 @@
     </div>
 </div>
 <hr>
-<table class="table animate__aminated fadeIn">
+<table *ngIf="cargando" class="table animate__aminated fadeIn">
     <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">Poder</th>
             <th scope="col">Estado</th>
-            <th scope="col">Tool</th>
-            <th scope="col">Acciones</th>
+            <th scope="col">Herramientas</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+        <tr *ngFor="let heroe of heroes; let i = index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{heroe.nombre}}</td>
+            <td>{{heroe.poder}}</td>
+            <td>
+                <label *ngIf="heroe.vivo" for="" class="badge badge-success m-1">Vivo</label>
+                <label *ngIf="!heroe.vivo" for="" class="badge badge-danger m-1">Muerto</label>
+            </td>
+            <td>
+                <button class="btn btn-info mr-1" [routerLink]="['/heroe', heroe.id]"
+                    routerLinkActive="router-link-active"><i class="fa fa-pen"></i></button>
+                <button class="btn btn-danger" (click)="deleteHeroe(heroe,i)"><i class="fa fa-trash"></i></button>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<div class="alert alert-info text-center mt-3" role="alert">
+<div *ngIf="cargando" class="alert alert-info text-center mt-3 animate__aminated fadeIn" role="alert">
     <h4>Cargando...</h4>
     <p>
         <i class="fa fa-sync fa-spin fa-2x"></i>
